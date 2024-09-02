@@ -1,0 +1,453 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header Styling */
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #8dabc9;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+
+/* Logo styling */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo image styling */
+#logo_img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+/* Font styling for the logo text */
+#logofont {
+    font-family: "SUSE", sans-serif;
+    font-style: normal;
+}
+
+/* Navigation styling */
+.head_nav {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    margin: 0 20px; /* Add margin for spacing */
+}
+
+/* Navigation list styling */
+.home {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Navigation item styling */
+.headul {
+    font-size: 30px; /* Adjust font size for better responsiveness */
+    text-decoration: none;
+    color: #333;
+    padding: 10px 48px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for navigation items */
+.headul:hover {
+    background-color: #e9ecef;
+}
+
+/* Authentication buttons styling */
+.auth-buttons {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+/* Authentication button styling */
+.auth-buttons a {
+    text-decoration: none;
+    font-size: 16px;
+    padding: 12px 46px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* Login button styling */
+.auth-buttons .login {
+    color: white;
+    background-color: #007bff;
+    border: 1px solid #007bff;
+}
+
+/* Signup button styling */
+.auth-buttons .signup {
+    color: white;
+    background-color: #007bff;
+}
+
+/* Hover effects for buttons */
+.auth-buttons .login:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.auth-buttons .signup:hover {
+    background-color: #0056b3;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .head_nav {
+        justify-content: center; /* Center nav items on smaller screens */
+    }
+    
+    .home {
+        flex-direction: column; /* Stack nav items vertically */
+    }
+
+    .auth-buttons {
+        margin-top: 10px; /* Add margin to separate from other elements */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column; /* Stack header items vertically on very small screens */
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-bottom: 10px; /* Add spacing below the logo */
+    }
+
+    .head_nav {
+        margin: 0; /* Remove margins on smaller screens */
+    }
+
+    .auth-buttons {
+        margin-top: 10px; /* Add spacing above the auth buttons */
+    }
+}
+/* Base styling for text */
+#commit {
+    font-size: 2.5rem; /* Use relative units */
+}
+
+#we {
+    font-size: 4rem; /* Use relative units */
+}
+
+/* Text container styling */
+#text {
+    position: absolute;
+    top: 50%;
+    left: 5%; /* Adjust to better fit on different screen sizes */
+    transform: translateY(-50%); /* Center vertically */
+    color: #333;
+    background-color: rgba(211, 231, 249, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 80%; /* Limit width to ensure it doesn't stretch too much */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    #commit {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+    }
+
+    #we {
+        font-size: 3rem; /* Adjust font size for smaller screens */
+    }
+
+    #text {
+        left: 2%; /* Adjust positioning for smaller screens */
+        max-width: 90%; /* Allow more width on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    #commit {
+        font-size: 1.5rem; /* Further adjust font size for very small screens */
+    }
+
+    #we {
+        font-size: 2.5rem; /* Further adjust font size for very small screens */
+    }
+
+    #text {
+        left: 1%; /* Adjust positioning for very small screens */
+        max-width: 95%; /* Allow even more width on very small screens */
+    }
+}
+
+
+/* Homepage Section */
+.homepage {
+    position: relative;
+    padding: 20px;
+    background-color: #a6c6e6;
+}
+
+
+
+
+.big_img {
+    width: 100%; /* Make the image width 100% of its container */
+    height: auto; /* Maintain the aspect ratio */
+    max-width: 1507px; /* Set a maximum width for large screens */
+    max-height: 700px; /* Set a maximum height to prevent it from growing too large */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    margin-left: 0; /* Reset any margin to align properly */
+    margin-top: 0; /* Reset any margin to align properly */
+}
+
+
+.home {
+    display:flex;
+    align-items: flex-end;
+    padding-top:20px;
+}
+
+
+/* Description Section */
+.description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    background-color: #a6c6e6;
+    margin-top: -30px;
+}
+
+.description-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.description-image img {
+    width: 100%;
+    max-width: 700px;
+    height: 450px;
+    margin-right: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.description-text {
+    flex: 1;
+    font-family: cursive;
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#innerlist {
+    margin-left: 30px;
+}
+
+#upper_ul {
+    margin-left: 50px;
+    margin-top: 60px;
+}
+
+
+
+/* Footer Section */
+.footer {
+    background-color: #a6c6e6;
+    padding: 20px 0;
+    text-align: center;
+    color: #333;
+    margin-top: -10px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+}
+
+.footer-item i {
+    font-size: 24px;
+    color: #007bff;
+}
+
+.footer-item a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.footer-item a:hover {
+    color: #0056b3;
+}
+
+#logo_img{
+    border-radius: 30px;
+}
+/* Offer Section */
+.offer {
+    padding: 40px 20px; /* Adjusted padding for better spacing */
+    background-color: #a6c6e6;
+    text-align: center;
+}
+
+.offer h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.offer-container {
+    display: flex;
+    flex-wrap: nowrap; /* Keep boxes in a single row */
+    gap: 20px;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    padding: 10px 0; /* Top and bottom padding for spacing */
+    margin: 0 auto; /* Center the container */
+    max-width: 100%; /* Ensure it doesn't exceed screen width */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.offer-box {
+
+    position: relative;
+    width: 250px; /* Adjust width as needed */
+    height: 300px; /* Adjust height as needed */
+    background-color: #8dabc9;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: grab;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; /* Prevents shrinking */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.offer-box img {
+    width: 100%;
+    height: 70%; /* Adjust height to fit description */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.offer-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.offer-box:hover .offer-description {
+    opacity: 1;
+}
+
+.offer-box:active {
+    cursor: grabbing;
+}
+
+
+
+/* Footer Section */
+.footer {
+    background-color: #8dabc9;
+    padding: 40px 20px;
+    color: #333;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #0056b3;
+}
+
+.contact-icons {
+    display: flex;
+    gap: 50px;
+}
+
+.contact-icons a img {
+    width: 24px;
+    height: 24px;
+    transition: opacity 0.3s ease;
+}
+
+.contact-icons a img:hover {
+    opacity: 0.8;
+}

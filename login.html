@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Health Plus</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #e9eff1;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 360px;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .login-box {
+            display: none; /* Hide both forms initially */
+        }
+
+        .login-box.active {
+            display: block; /* Show the selected form */
+        }
+
+        .login-box h2 {
+            margin-bottom: 20px;
+            color: #007bff;
+            font-size: 24px;
+        }
+
+        .login-box input {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+
+        .login-box button {
+            width: 100%;
+            padding: 14px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .login-box button:hover {
+            background-color: #0056b3;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .switch-container {
+            margin-top: 30px; /* Space between login boxes and radio buttons */
+            text-align: center;
+        }
+
+        .switch-container label {
+            margin: 0 20px;
+            font-weight: bold;
+            color: #007bff;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .switch-container input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .reset-button {
+            margin-top: 20px; /* Space between login forms and Reset button */
+            padding: 10px 20px;
+            background-color: #007bff; /* Blue color for the reset button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .reset-button:hover {
+            background-color: #0056b3;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <script src="login.js" defer></script>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Hospital Login Box -->
+        <div class="login-box hospital active">
+            <h2>Hospital Login</h2>
+            <form id="login-form" action="available.html" method="get">
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <!-- Admin Login Box -->
+        <div class="login-box admin">
+            <h2>Admin Login</h2>
+            <form id="admin-form" action="admin.html" method="get">
+                <input type="email" name="email" placeholder="Admin Email" required>
+                <input type="password" name="password" placeholder="Admin Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <!-- Radio Buttons for Switching Forms -->
+        <div class="switch-container">
+            <label>
+                <input type="radio" name="login-type" value="hospital" checked>
+                Hospital Login
+            </label>
+            <label>
+                <input type="radio" name="login-type" value="admin">
+                Admin Login
+            </label>
+        </div>
+
+        <!-- Reset Button -->
+        <button class="reset-button" onclick="resetForm()">Reset</button>
+    </div>
+
+</body>
+</html>

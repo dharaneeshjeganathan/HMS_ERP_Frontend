@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Mohan Kumaramangalam Medical College Hospital</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            margin-top: 150px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 1500px;
+            box-sizing: border-box;
+            overflow: auto;
+            flex: 1;
+        }
+
+        h1 {
+            margin-bottom: 1rem;
+            color: #333;
+            font-size: 2rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 0.75rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        .alert {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .data-table th, .data-table td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        .data-table th {
+            background-color: #f4f4f4;
+        }
+
+        #conth1 {
+            margin-top: 10px;
+        }
+
+         /* Header Styles */
+         .head {
+            background-color: #8dabc9;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: black;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        .headul{
+            margin-right:40px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        #logo_img {
+            width: 70px;
+            margin-right: 10px;
+            border-radius: 35px;
+        }
+
+        #logofont {
+            font-size: 18px;
+            line-height: 1.2;
+        }
+
+        .head_nav ul {
+            list-style-type: none;
+            font-size: 25px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .head_nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .head_nav a:hover {
+            text-decoration: underline;
+        }
+
+        .auth-buttons {
+            display: none; /* Hide auth buttons */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="head">             
+        <div class="logo">
+            <img src="./assets/logo.png" alt="Health Plus Logo" id="logo_img">
+            <h2 id="logofont">Government Medical<br> College Hospital <br>Salem</h2>
+        </div>
+       
+        <nav class="head_nav">
+            <ul class="home">
+                <li><a href="index.html" class="headul">Home</a></li>
+                <!-- <li><a href="aboutus.html" class="headul">About</a></li> -->
+                <!-- <li><a href="contact.html" class="headul">Contact</a></li> -->
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 id="conth1">Government Mohan Kumaramangalam Medical College Hospital</h1>
+
+        <!-- Appointment Details Section -->
+        <div class="section" id="appointment-details">
+            <h2>Appointment Details</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Patient ID</th>
+                        <th>Patient Name</th>
+                        <th>Appointment Time</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="appointment-table-body">
+                    <!-- Fake Data -->
+                    <tr>
+                        <td>P001</td>
+                        <td>John Doe</td>
+                        <td>2024-08-28T09:00</td>
+                        <td>Scheduled</td>
+                    </tr>
+                    <tr>
+                        <td>P002</td>
+                        <td>Jane Smith</td>
+                        <td>2024-08-28T09:30</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>P003</td>
+                        <td>Michael Brown</td>
+                        <td>2024-08-28T10:00</td>
+                        <td>Scheduled</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="appointment-alert" class="alert"></div>
+        </div>
+
+        <!-- Bed Availability Section -->
+        <div class="section" id="bed-availability">
+            <h2>Bed Availability</h2>
+            <form id="bedForm">
+                <div class="input-group">
+                    <label for="ward">Ward</label>
+                    <select id="ward" name="ward" required>
+                        <option value="">Select Ward</option>
+                        <option value="General">General</option>
+                        <option value="ICU">ICU</option>
+                        <option value="Emergency">Emergency</option>
+                    </select>
+                </div>
+                <button type="submit">Check Bed Availability</button>
+            </form>
+            <div id="bed-alert" class="alert"></div>
+            <table class="data-table" id="bed-table" style="display:none;">
+                <thead>
+                    <tr>
+                        <th>Ward</th>
+                        <th>Total Beds</th>
+                        <th>Occupied Beds</th>
+                        <th>Available Beds</th>
+                    </tr>
+                </thead>
+                <tbody id="bed-table-body">
+                    <tr>
+                        <td>General</td>
+                        <td>30</td>
+                        <td>22</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>ICU</td>
+                        <td>12</td>
+                        <td>8</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>Emergency</td>
+                        <td>8</td>
+                        <td>5</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Stock Management Section -->
+        <div class="section" id="stock-management">
+            <h2>Stock Management</h2>
+            <form id="stockForm">
+                <div class="input-group">
+                    <label for="stock-item">Item</label>
+                    <input type="text" id="stock-item" name="stock-item" required>
+                </div>
+                <div class="input-group">
+                    <label for="stock-quantity">Quantity</label>
+                    <input type="number" id="stock-quantity" name="stock-quantity" required>
+                </div>
+                <button type="submit">Update Stock</button>
+            </form>
+            <div id="stock-alert" class="alert"></div>
+            <table class="data-table" id="stock-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody id="stock-table-body">
+                    <tr>
+                        <td>Bandages</td>
+                        <td>150</td>
+                    </tr>
+                    <tr>
+                        <td>Medicines</td>
+                        <td>75</td>
+                    </tr>
+                    <tr>
+                        <td>Syringes</td>
+                        <td>200</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+   
+
+    <script>
+        
+        document.getElementById('bedForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const ward = document.getElementById('ward').value;
+            const alertBox = document.getElementById('bed-alert');
+            const bedTable = document.getElementById('bed-table');
+            const bedTableBody = document.getElementById('bed-table-body');
+            
+            if (ward) {
+                alertBox.textContent = `Checking availability for ${ward} ward...`;
+                alertBox.style.display = 'block';
+
+                setTimeout(() => {
+                    const beds = {
+                        General: { total: 30, occupied: 22 },
+                        ICU: { total: 12, occupied: 8 },
+                        Emergency: { total: 8, occupied: 5 }
+                    };
+                    const availableBeds = beds[ward].total - beds[ward].occupied;
+                    bedTableBody.innerHTML = `
+                        <tr>
+                            <td>${ward}</td>
+                            <td>${beds[ward].total}</td>
+                            <td>${beds[ward].occupied}</td>
+                            <td>${availableBeds}</td>
+                        </tr>
+                    `;
+                    bedTable.style.display = 'table';
+                    alertBox.textContent = `Beds available: ${availableBeds}`;
+                }, 1000);
+            } else {
+                alertBox.textContent = 'Please select a ward.';
+                alertBox.style.display = 'block';
+            }
+        });
+
+       
+        document.getElementById('stockForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const stockItem = document.getElementById('stock-item').value;
+            const stockQuantity = document.getElementById('stock-quantity').value;
+            const alertBox = document.getElementById('stock-alert');
+            const stockTableBody = document.getElementById('stock-table-body');
+
+            if (stockItem && stockQuantity) {
+                alertBox.textContent = `Stock for ${stockItem} updated successfully!`;
+                alertBox.style.display = 'block';
+
+              
+                const newRow = document.createElement('tr');
+                newRow.innerHTML = `
+                    <td>${stockItem}</td>
+                    <td>${stockQuantity}</td>
+                `;
+                stockTableBody.appendChild(newRow);
+
+                
+                document.getElementById('stockForm').reset();
+            } else {
+                alertBox.textContent = 'Please fill in all fields.';
+                alertBox.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

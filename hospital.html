@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Hospitals</title>
+    <style>
+       
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #85aacf; 
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff; 
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+      
+        #searchInput {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .hospital-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .hospital-item {
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #e7f3ff;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .hospital-item:hover {
+            background-color: #d0e7ff;
+        }
+
+ 
+        @media (max-width: 600px) {
+            .hospital-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>List of Hospitals</h1>
+        <input type="text" id="searchInput" placeholder="Search hospitals...">
+        <ul class="hospital-list" id="hospitalList"></ul>
+    </div>
+
+    <script>
+        
+        const hospitals = [
+            'City General Hospital',
+            'Heart Care Center',
+            'Pediatric Wellness Clinic',
+            'NeuroHealth Hospital',
+            'SkinCare Dermatology'
+        ];
+
+       
+        function displayHospitals(hospitals) {
+            const hospitalList = document.getElementById('hospitalList');
+            hospitalList.innerHTML = ''; 
+            hospitals.forEach(hospital => {
+                const listItem = document.createElement('li');
+                listItem.className = 'hospital-item';
+                listItem.textContent = hospital;
+
+                
+                listItem.addEventListener('click', function() {
+                    if (hospital === 'City General Hospital') {
+                        window.location.href = 'available.html'; 
+                    } else {
+                        alert('No details available for ' + hospital);
+                    }
+                });
+
+                hospitalList.appendChild(listItem);
+            });
+        }
+
+  
+        function debounce(func, wait) {
+            let timeout;
+            return function(...args) {
+                const context = this;
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(context, args), wait);
+            };
+        }
+
+     
+        document.getElementById('searchInput').addEventListener('input', debounce(function() {
+            const filter = this.value.toLowerCase();
+            const filteredHospitals = hospitals.filter(hospital => 
+                hospital.toLowerCase().includes(filter)
+            );
+            displayHospitals(filteredHospitals);
+        }, 300));
+
+      
+        displayHospitals(hospitals);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospitals List - Government Hospital Network</title>
+    <style>
+        /* Your CSS code here */
+    </style>
+    <script src="admin.js" defer></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f4f8;
+            color: #333;
+        }
+
+        .head {
+            background-color: #8dabc9;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: black;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .headul {
+            margin-right: 40px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        #logo_img {
+            width: 40px;
+            margin-right: 10px;
+            border-radius: 35px;
+        }
+
+        #logofont {
+            font-size: 18px;
+            line-height: 1.2;
+        }
+
+        .head_nav ul {
+            list-style-type: none;
+            font-size: 25px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .head_nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .head_nav a:hover {
+            text-decoration: underline;
+        }
+
+        .auth-buttons {
+            display: none; /* Hide auth buttons */
+        }
+
+        .container {
+            display: flex;
+            max-width: 1500px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            margin-top: 120px; /* Add top margin to avoid overlap with fixed header */
+        }
+
+        .left-section {
+            width: 25%;
+            padding: 20px;
+            margin-right: 20px;
+            background-color: #f2f2f2;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .right-section {
+            width: 75%;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #0277bd;
+        }
+
+        .header h1 {
+            color: #0277bd;
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .add-button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .add-button:hover {
+            background-color: #388E3C;
+            transform: translateY(-2px);
+        }
+
+        .add-button i {
+            margin-right: 8px;
+            font-size: 18px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 15px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 10px 15px;
+            background-color: #fff;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #eee;
+        }
+
+        .sidebar .active {
+            background-color: #0277bd;
+            color: #fff;
+        }
+
+        .hospital-details,
+        .doctor-details {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            background: #fafafa;
+        }
+
+        .hospital-details h2,
+        .doctor-details h2 {
+            margin: 0 0 10px;
+            color: #01579b;
+            font-size: 22px;
+        }
+
+        .view-details {
+            background-color: #00897b;
+            color: #fff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .view-details:hover {
+            background-color: #00695c;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="head">             
+        <div class="logo">
+            <img src="./assets/logo.png" alt="Health Plus Logo" id="logo_img">
+            <h2 id="logofont">Government <br>Portal</h2>
+        </div>
+        <h1 style="color: #0b0a0a; font-size:">ADMIN PAGE</h1>
+        <nav class="head_nav">
+            <ul class="home">
+                <li><a href="index.html" class="headul">Home</a></li>
+                <!-- <li><a href="aboutus.html" class="headul">About</a></li> -->
+                <!-- <li><a href="contact.html" class="headul">Contact</a></li> -->
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="left-section">
+            <div class="sidebar">
+                <ul>
+                    <li><a href="#" class="active" onclick="showHospitals()">Hospitals</a></li>
+                    <li><a href="#" onclick="showDoctors()">Doctors</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <!-- Content will be dynamically loaded here based on selection -->
+            <div id="content"></div>
+        </div>
+    </div>
+</body>
+</html>
